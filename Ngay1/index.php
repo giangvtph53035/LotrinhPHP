@@ -1,14 +1,14 @@
 <?php
 // Định nghĩa hằng số
-const TY_LE_HOA_HONG = 0.2; // Tỷ lệ hoa hồng 20%
-const THUE_VAT = 0.1; // Thuế VAT 10%
+const TY_LE_HOA_HONG = 0.2; 
+const THUE_VAT = 0.1; 
 
 // Dữ liệu đầu vào
 $ten_chien_dich = "Spring Sale 2025";
 $so_don_hang = 150;
 $gia_san_pham = 99.99;
 $loai_san_pham = "Thời trang";
-$trang_thai = true; // true: kết thúc, false: đang chạy
+$trang_thai = true; 
 $danh_sach_don = [
     "ID001" => 99.99,
     "ID002" => 49.99,
@@ -20,7 +20,7 @@ $danh_sach_don = [
 // Tính toán doanh thu từ danh sách đơn hàng
 $doanh_thu = 0;
 foreach ($danh_sach_don as $ma_don => $gia) {
-    $doanh_thu += (float)$gia; // Chuyển đổi kiểu dữ liệu nếu cần
+    $doanh_thu += (float)$gia; 
 }
 
 // Tính toán chi phí hoa hồng và lợi nhuận
