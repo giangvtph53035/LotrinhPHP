@@ -1,6 +1,4 @@
 <?php
-// filepath: c:\laragon\www\LotrinhPHP\Ngay2\index.php
-
 // Dữ liệu người dùng
 $users = [
     1 => ['name' => 'Alice', 'referrer_id' => null],
@@ -12,9 +10,9 @@ $users = [
 
 // Dữ liệu đơn hàng
 $orders = [
-    ['order_id' => 101, 'user_id' => 4, 'amount' => 2000000.0], // 2,000,000 VND
-    ['order_id' => 102, 'user_id' => 3, 'amount' => 1500000.0], // 1,500,000 VND
-    ['order_id' => 103, 'user_id' => 5, 'amount' => 3000000.0], // 3,000,000 VND
+    ['order_id' => 101, 'user_id' => 4, 'amount' => 2000000.0], 
+    ['order_id' => 102, 'user_id' => 3, 'amount' => 1500000.0], 
+    ['order_id' => 103, 'user_id' => 5, 'amount' => 3000000.0], 
 ];
 
 // Tỷ lệ hoa hồng theo cấp
@@ -24,9 +22,9 @@ $commissionRates = [
     3 => 0.02,
 ];
 
-/**
- * Hàm đệ quy để tìm chuỗi giới thiệu từ người mua lên cấp trên.
- */
+
+// Hàm đệ quy để tìm chuỗi giới thiệu từ người mua lên cấp trên.
+ 
 function getReferrerChain(int $userId, array $users, int $level = 1, int $maxLevel = 3): array {
     if ($level > $maxLevel || !isset($users[$userId]['referrer_id']) || $users[$userId]['referrer_id'] === null) {
         return [];
@@ -35,9 +33,9 @@ function getReferrerChain(int $userId, array $users, int $level = 1, int $maxLev
     return [$level => $referrerId] + getReferrerChain($referrerId, $users, $level + 1, $maxLevel);
 }
 
-/**
- * Hàm tính hoa hồng cho từng đơn hàng.
- */
+
+// Hàm tính hoa hồng cho từng đơn hàng.
+ 
 function calculateCommission(array $orders, array $users, array $commissionRates): array {
     $commissions = [];
 
@@ -63,9 +61,9 @@ function calculateCommission(array $orders, array $users, array $commissionRates
     return $commissions;
 }
 
-/**
- * Hàm tổng hợp hoa hồng cho từng người dùng.
- */
+
+// Hàm tổng hợp hoa hồng cho từng người dùng.
+
 function summarizeCommissions(array $commissions): array {
     $summary = [];
     foreach ($commissions as $userId => $details) {

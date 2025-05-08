@@ -1,5 +1,5 @@
 <?php
-// filepath: c:\laragon\www\LotrinhPHP\Ngay3\index.php
+
 
 // Dữ liệu giả định
 $employees = [
@@ -49,17 +49,7 @@ function calculateNetSalary($employees, $workingDays, $adjustments) {
     }, $employees);
 }
 
-
-function generatePayrollReport($payroll) {
-    foreach ($payroll as $entry) {
-        echo "Mã NV: {$entry['id']}, Họ tên: {$entry['name']}, Ngày công: {$entry['working_days']}, ";
-        echo "Lương cơ bản: " . number_format($entry['base_salary']) . ", Phụ cấp: " . number_format($entry['allowance']) . ", ";
-        echo "Khấu trừ: " . number_format($entry['deduction']) . ", Lương thực lĩnh: " . number_format($entry['net_salary']);
-        echo "<br>";
-    }
-}
-
-
+// Hàm hiển thị dữ liệu lương qua bảng
 function generatePayrollTable($payroll) {
     echo "<table border='1' cellspacing='0' cellpadding='5'>";
     echo "<tr>

@@ -83,6 +83,6 @@ echo "----------------------------------------";
 echo "<br>";
 echo "Chiến dịch $ten_chien_dich đã " . ($trang_thai ? "kết thúc" : "đang chạy") . " với lợi nhuận: $loi_nhuan USD";
 echo "<br>";
-// echo "Debug: File " . __FILE__ . " at line " . __LINE__;
-// echo "<br>";
+echo "Debug: File " . __FILE__ . " at line " . __LINE__;
+echo "<br>";
 ?>
