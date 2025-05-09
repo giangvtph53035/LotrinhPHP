@@ -10,9 +10,9 @@ $users = [
 
 // Dữ liệu đơn hàng
 $orders = [
-    ['order_id' => 101, 'user_id' => 4, 'amount' => 2000000.0], 
-    ['order_id' => 102, 'user_id' => 3, 'amount' => 1500000.0], 
-    ['order_id' => 103, 'user_id' => 5, 'amount' => 3000000.0], 
+    ['order_id' => 101, 'user_id' => 4, 'amount' => 2000000], 
+    ['order_id' => 102, 'user_id' => 3, 'amount' => 1500000], 
+    ['order_id' => 103, 'user_id' => 5, 'amount' => 3000000], 
 ];
 
 // Tỷ lệ hoa hồng theo cấp
