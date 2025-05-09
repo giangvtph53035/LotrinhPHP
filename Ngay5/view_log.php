@@ -15,13 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['log_date'])) {
             $line = fgets($file);
             if ($line) {
                 // Đánh dấu hành động thất bại bằng màu đỏ
-                $style = strpos($line, 'thất bại') !== false ? 'color: red;' : '';
-                $logContent .= "<li style='$style'>" . htmlspecialchars($line) . "</li>";
+                $class = strpos($line, 'thất bại') !== false ? 'text-red-600' : 'text-gray-700';
+                $logContent .= "<li class='$class'>" . htmlspecialchars($line) . "</li>";
             }
         }
         fclose($file);
     } else {
-        $logContent = '<p>Không có nhật ký cho ngày này.</p>';
+        $logContent = '<p class="text-gray-500">Không có nhật ký cho ngày này.</p>';
     }
 }
 ?>
@@ -30,24 +30,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['log_date'])) {
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xem nhật ký</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 10px; }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Xem nhật ký hoạt động</h1>
-    <form method="POST">
-        <label for="log_date">Chọn ngày:</label>
-        <input type="date" id="log_date" name="log_date" value="<?php echo $selectedDate; ?>" required>
-        <button type="submit">Xem</button>
-    </form>
-    <h2>Nhật ký ngày <?php echo $selectedDate; ?></h2>
-    <ul>
-        <?php echo $logContent; ?>
-    </ul>
-    <p><a href="index.php">Quay lại ghi log</a></p>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-2xl w-full mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Xem nhật ký hoạt động</h1>
+
+        <!-- Form chọn ngày -->
+        <form method="POST" class="flex items-center space-x-4 mb-6">
+            <div class="flex-1">
+                <label for="log_date" class="block text-sm font-medium text-gray-700">Chọn ngày:</label>
+                <input type="date" id="log_date" name="log_date" value="<?php echo $selectedDate; ?>" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <button type="submit" class="mt-6 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Xem</button>
+        </form>
+
+        <!-- Hiển thị nhật ký -->
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Nhật ký ngày <?php echo $selectedDate; ?></h2>
+        <ul class="list-none space-y-2">
+            <?php echo $logContent; ?>
+        </ul>
+
+        <!-- Liên kết quay lại -->
+        <p class="mt-6 text-center">
+            <a href="index.php" class="text-blue-600 hover:underline">Quay lại ghi log</a>
+        </p>
+    </div>
 </body>
 </html>
