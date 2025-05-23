@@ -1,4 +1,5 @@
 <?php
+// Lớp trừu tượng đại diện cho tài khoản ngân hàng, định nghĩa các thuộc tính và phương thức chung
 namespace XYZBank\Accounts;
 abstract class BankAccount {
     protected string $accountNumber;

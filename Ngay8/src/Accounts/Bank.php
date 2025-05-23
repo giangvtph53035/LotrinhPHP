@@ -1,4 +1,5 @@
 <?php
+// Lớp quản lý thông tin ngân hàng, tên ngân hàng và tổng số tài khoản
 namespace XYZBank\Accounts;
 
 class Bank {

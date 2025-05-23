@@ -1,6 +1,9 @@
 <?php
 namespace XYZBank\Accounts;
 
+/**
+ * Lớp tài khoản thanh toán, kế thừa BankAccount, cho phép nạp/rút tiền và ghi log giao dịch
+ */
 class CheckingAccount extends BankAccount {
     use TransactionLogger;
 

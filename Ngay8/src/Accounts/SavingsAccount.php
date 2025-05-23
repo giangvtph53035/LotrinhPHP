@@ -1,4 +1,5 @@
 <?php
+// Lớp tài khoản tiết kiệm, kế thừa BankAccount, có tính lãi suất và kiểm tra số dư tối thiểu
 namespace XYZBank\Accounts;
 class SavingsAccount extends BankAccount implements InterestBearing {
     use TransactionLogger;

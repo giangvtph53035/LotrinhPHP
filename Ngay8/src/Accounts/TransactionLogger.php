@@ -1,4 +1,5 @@
 <?php
+// Trait dùng để ghi log các giao dịch tài khoản
 namespace XYZBank\Accounts;
 trait TransactionLogger {
     public function logTransaction(string $type, float $amount, float $newBalance): void {

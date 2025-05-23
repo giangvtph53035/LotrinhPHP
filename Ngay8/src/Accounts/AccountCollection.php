@@ -1,6 +1,9 @@
 <?php
 namespace XYZBank\Accounts;
 
+/**
+ * Lớp quản lý tập hợp các tài khoản, hỗ trợ thêm, duyệt và lọc tài khoản
+ */
 class AccountCollection implements \IteratorAggregate {
     private array $accounts = [];
 
