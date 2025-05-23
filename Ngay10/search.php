@@ -15,5 +15,4 @@ if (isset($_GET['q'])) {
         echo "<p>Không tìm thấy sản phẩm.</p>";
     }
 }
-
 ?>
