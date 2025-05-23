@@ -1,0 +1,53 @@
+/* Tùy chỉnh bổ sung cho Tailwind */
+.product-link:hover {
+    color: #1d4ed8;
+}
+
+#product-details img {
+    max-width: 100%;
+    height: auto;
+}
+
+.review {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product img {
+    max-width: 50px;
+    border-radius: 4px;
+}
+
+#poll-results p {
+    background-color: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+
+/* Animation cho nút */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    #product-list {
+        grid-template-columns: 1fr;
+    }
+}
